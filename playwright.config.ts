@@ -15,7 +15,7 @@ export default defineConfig({
 		url: "http://localhost:3000",
 		reuseExistingServer: !process.env.CI,
 		env: {
-			PATH: `${process.env.HOME}/.bun/bin:${process.env.PATH ?? ""}`,
+			PATH: `${process.env.HOME ?? ""}/.bun/bin:${process.env.PATH ?? ""}`,
 		},
 	},
 	projects: [{ name: "chromium", use: { viewport: { width: 1440, height: 900 } } }],

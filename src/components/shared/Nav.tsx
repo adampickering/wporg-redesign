@@ -1,0 +1,104 @@
+import { WpMark } from "@/components/shared/WpMark";
+
+export type NavActiveSlug = "showcase" | "plugins" | "themes" | "develop" | "news";
+
+type NavProps = {
+	active?: NavActiveSlug;
+};
+
+const PRIMARY_LINKS: { label: string; slug: NavActiveSlug; caret?: true }[] = [
+	{ label: "Showcase", slug: "showcase" },
+	{ label: "Plugins", slug: "plugins" },
+	{ label: "Themes", slug: "themes" },
+	{ label: "Develop", slug: "develop", caret: true },
+	{ label: "News", slug: "news" },
+];
+
+export function Nav({ active }: NavProps) {
+	return (
+		<header role="banner" className="w-full">
+			<nav
+				aria-label="Primary"
+				className="max-w-[1280px] mx-auto px-8 py-[22px] grid grid-cols-[auto_1fr_auto] items-center gap-8"
+			>
+				{/* Left: Brand */}
+				<a
+					href="/"
+					aria-label="WordPress home"
+					className="flex items-center gap-2.5 text-foreground no-underline"
+				>
+					<WpMark className="w-6 h-6 text-foreground" />
+					<span className="font-display font-semibold text-[17px] tracking-[-0.02em] leading-none">
+						WordPress
+					</span>
+				</a>
+
+				{/* Center: Primary links */}
+				<ul
+					role="list"
+					className="flex items-center gap-[30px] list-none m-0 p-0"
+				>
+					{PRIMARY_LINKS.map(({ label, slug, caret }) => {
+						const isActive = active === slug;
+						return (
+							<li key={slug}>
+								<a
+									href="#"
+									aria-haspopup={caret ? "true" : undefined}
+									className={[
+										"inline-flex items-center gap-1 font-display text-[14px] tracking-[-0.005em] no-underline",
+										"transition-colors duration-[200ms]",
+										"[transition-timing-function:cubic-bezier(0.4,0,0.2,1)]",
+										isActive
+											? "text-foreground font-medium"
+											: "text-muted-foreground font-normal hover:text-foreground",
+									].join(" ")}
+								>
+									{label}
+									{caret && (
+										<span aria-hidden="true" className="text-[12px] leading-none opacity-70">
+											▾
+										</span>
+									)}
+								</a>
+							</li>
+						);
+					})}
+				</ul>
+
+				{/* Right: Actions */}
+				<div className="flex items-center gap-3">
+					{/* Slot A — Task 12 will replace this with the ⌘K search trigger */}
+					<div
+						data-slot="search"
+						aria-hidden="true"
+						className="w-[200px] h-[36px] rounded-pill border border-dashed border-muted-foreground/30"
+					/>
+
+					<a
+						href="#"
+						className="font-display text-[14px] tracking-[-0.005em] text-muted-foreground no-underline hover:text-foreground transition-colors duration-[200ms] [transition-timing-function:cubic-bezier(0.4,0,0.2,1)] px-1"
+					>
+						Sign in
+					</a>
+
+					<a
+						href="#"
+						className={[
+							"inline-flex items-center px-[18px] py-[11px]",
+							"rounded-pill bg-foreground text-[color:var(--color-background)]",
+							"font-display text-[13px] font-medium tracking-[-0.005em]",
+							"no-underline leading-none",
+							"transition-transform duration-[75ms]",
+							"[transition-timing-function:cubic-bezier(0.4,0,0.2,1)]",
+							"active:scale-[0.96]",
+							"shadow-button",
+						].join(" ")}
+					>
+						Get WordPress
+					</a>
+				</div>
+			</nav>
+		</header>
+	);
+}

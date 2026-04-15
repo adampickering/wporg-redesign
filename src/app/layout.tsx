@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { GeistSans } from "geist/font/sans";
 import "@fontsource/inter/300.css";
 import "@fontsource/inter/400.css";
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   description: "The open source publishing platform of choice for millions of websites worldwide.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={GeistSans.variable}>
       <body className="antialiased">{children}</body>

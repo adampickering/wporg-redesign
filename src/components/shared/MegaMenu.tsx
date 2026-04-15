@@ -48,11 +48,12 @@ const COLUMNS = [
 export function MegaMenu() {
 	return (
 		<div
-			role="region"
-			aria-label="Develop menu"
+			// Decorative until it's keyboard-operable. No role/aria-label — a
+			// non-operable landmark would pollute the screen-reader rotor. The
+			// follow-up NavigationMenu upgrade will add proper role="menu" +
+			// aria-expanded on the trigger.
+			aria-hidden="true"
 			className={[
-				/* Visibility -- toggled by parent group-hover */
-				"hidden group-hover:block",
 				/* Positioning -- centered below trigger, 12px gap */
 				"absolute top-full left-1/2 -translate-x-1/2 mt-3 z-50",
 				/* Width */
@@ -63,10 +64,12 @@ export function MegaMenu() {
 				"py-6 px-7",
 				/* Shadow via shadow-card utility (defined in @theme inline) */
 				"shadow-card",
-				/* Fade in on hover -- opacity only, no translateY (RULES.md) */
+				/* Fade in on hover -- opacity + pointer-events (not display), so
+				   the transition-opacity actually fires. No translateY (RULES). */
+				"opacity-0 pointer-events-none",
+				"group-hover:opacity-100 group-hover:pointer-events-auto",
 				"transition-opacity duration-[200ms]",
 				"[transition-timing-function:cubic-bezier(0.215,0.61,0.355,1)]",
-				"opacity-0 group-hover:opacity-100",
 			].join(" ")}
 		>
 			<div className="grid grid-cols-4 gap-7">

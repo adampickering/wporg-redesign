@@ -4,17 +4,19 @@ import { Nav } from "@/components/shared/Nav";
 
 export default function Home() {
 	return (
-		<main className="min-h-screen">
+		<>
 			<PromoBar
 				tag="WP 7.0 RC2"
 				message="Release candidate now available for testing."
 				linkLabel="Read the release notes"
 				href="/news/"
 			/>
-			<Nav />
-			<div className="flex items-center justify-center py-20">
-				<WpMark className="w-12 h-12 text-foreground" />
-			</div>
-		</main>
+			<Nav active="showcase" />
+			<main className="min-h-screen">
+				<div className="flex items-center justify-center py-20">
+					<WpMark className="w-12 h-12 text-foreground" />
+				</div>
+			</main>
+		</>
 	);
 }

@@ -17,7 +17,7 @@ export function WpMarkSymbol() {
   );
 }
 
-export function WpMark({ className, ...props }: SVGProps<SVGSVGElement> & { className?: string }) {
+export function WpMark({ className, ...props }: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 28 28" className={className} aria-hidden {...props}>
       <use href="#wp-mark" />

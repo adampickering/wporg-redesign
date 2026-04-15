@@ -52,8 +52,11 @@ echo
 
 # 1. Pure-white backgrounds. Our tokens use `hsl(0 0% 100%)` for the card
 #    surface, so neither #fff nor bg-white should appear in authored code.
-check "pure-white background (#fff / #ffffff / bg-white)" \
-	'#(fff|ffffff)\b|\bbg-white\b'
+#    `bg-white/N` opacity modifiers ARE allowed on dark-slab surfaces — a
+#    10% white overlay is semantically correct for a chip on a near-black
+#    background. The regex below flags solid `bg-white` but not `bg-white/N`.
+check "pure-white background (#fff / #ffffff / solid bg-white)" \
+	'#(fff|ffffff)\b|bg-white([^/a-zA-Z0-9_-]|$)'
 
 # 2. rounded-md monotone. Our radius architecture is pill / card (14-16px) /
 #    chip (4-6px). `rounded-md` is the AI default; flag it.

@@ -67,6 +67,7 @@
 	--accent: var(--surface-cream);
 	--accent-foreground: var(--foreground);
 	--destructive: hsl(0 72% 51%);
+	--destructive-foreground: hsl(0 0% 100%);
 	--ring: var(--primary);
 
 	/* Charts (kept for shadcn chart primitive; mapped onto our accents) */

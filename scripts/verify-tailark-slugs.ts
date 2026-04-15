@@ -1,5 +1,9 @@
 // scripts/verify-tailark-slugs.ts
 //
+// `export {}` makes this a module so top-level await typechecks under
+// `tsc --noEmit` (Task 7's `bun run check`). Bun runs the file as ESM either way.
+export {};
+//
 // Verified against tailark.com/blocks on 2026-04-15.
 // Corrections from the original expected list:
 //   header-section  → does not exist in Dusk (navigation is shadcn-only, per spec §8.3)

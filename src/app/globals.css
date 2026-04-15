@@ -4,127 +4,330 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
-}
+/*
+ * wporg-redesign design tokens
+ *
+ * Two layers:
+ *
+ * 1. `:root` / `.dark` — raw, fully-resolved CSS values (hsl(...), rgba(...),
+ *    strings). These are the source of truth. Dark theme overrides live in
+ *    `.dark`. All HSL values are hand-converted from the hex in RULES.md /
+ *    design spec section 6; comments show the original hex for reviewers.
+ *
+ * 2. `@theme inline` — aliases the raw variables into Tailwind v4's token
+ *    namespaces (`--color-*`, `--font-*`, `--radius-*`, `--shadow-*`,
+ *    `--ease-*`, `--duration-*`) so utilities like `bg-background`,
+ *    `font-display`, `rounded-card`, `shadow-card`, `ease-reveal`,
+ *    `duration-reveal` all resolve automatically. The `inline` keyword tells
+ *    v4 to substitute the variable reference at build time rather than
+ *    wrapping it in a color function, so values can be any valid CSS.
+ *
+ * Shadcn primitives (installed in Task 2) reference the un-prefixed names
+ * (`--background`, `--primary`, `--border`, ...) directly, so they theme
+ * through this same variable layer with no per-component overrides.
+ */
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+	/* Surfaces ---------------------------------------------------------- */
+	/* All HSL values are 2-decimal precision so they round-trip exactly
+	   back to the source hex after lightningcss minification. */
+	--background: hsl(60 23.08% 97.45%);        /* #FAFAF7 — warm off-white */
+	--background-news: hsl(48 33.33% 97.06%);   /* #FAF9F5 — news page surface */
+	--surface-cream: hsl(52.5 28.57% 94.51%);   /* #F5F4ED — news featured card */
+
+	/* Foreground / text ------------------------------------------------- */
+	--foreground: hsl(234.55 17.46% 12.35%);    /* #1A1B25 — primary text */
+	--foreground-news: hsl(60 2.56% 7.65%);     /* #141413 — news primary text */
+	--muted-foreground: hsl(217.5 8.89% 35.29%);/* #525862 — secondary body */
+	--muted: hsl(228.39 13.19% 53.92%);         /* #7A8099 — mono eyebrows */
+
+	/* Hairline border --------------------------------------------------- */
+	--border: hsl(234.55 17.46% 12.35% / 0.06); /* rgba(26,27,37,0.06) */
+	--input: hsl(234.55 17.46% 12.35% / 0.12);
+
+	/* Dark slabs -------------------------------------------------------- */
+	--dark-slab: hsl(222.86 24.14% 5.69%);      /* #0B0D12 */
+	--dark-surface: hsl(234.55 17.46% 12.35%);  /* #1A1B25 */
+
+	/* Brand + accents --------------------------------------------------- */
+	--primary: hsl(206.85 67.77% 41.37%);       /* #2271B1 — WP blue */
+	--primary-foreground: hsl(0 0% 100%);
+	--accent-cyan: hsl(196.36 100% 63.33%);     /* #44CCFF */
+	--accent-purple: hsl(246.11 100% 69.22%);   /* #7262FF */
+	--accent-mint: hsl(176.28 66.21% 57.06%);   /* #49DAD1 */
+
+	/* Shadcn primitive aliases ----------------------------------------- */
+	/*   Every installed ui/*.tsx primitive references one of these.     */
+	--card: hsl(0 0% 100%);
+	--card-foreground: var(--foreground);
+	--popover: var(--background);
+	--popover-foreground: var(--foreground);
+	--secondary: var(--surface-cream);
+	--secondary-foreground: var(--foreground);
+	--accent: var(--surface-cream);
+	--accent-foreground: var(--foreground);
+	--destructive: hsl(0 72% 51%);
+	--ring: var(--primary);
+
+	/* Charts (kept for shadcn chart primitive; mapped onto our accents) */
+	--chart-1: var(--primary);
+	--chart-2: var(--accent-cyan);
+	--chart-3: var(--accent-purple);
+	--chart-4: var(--accent-mint);
+	--chart-5: var(--muted);
+
+	/* Sidebar (unused in this prototype but required by shadcn/sidebar) */
+	--sidebar: var(--background);
+	--sidebar-foreground: var(--foreground);
+	--sidebar-primary: var(--primary);
+	--sidebar-primary-foreground: var(--primary-foreground);
+	--sidebar-accent: var(--surface-cream);
+	--sidebar-accent-foreground: var(--foreground);
+	--sidebar-border: var(--border);
+	--sidebar-ring: var(--primary);
+
+	/* Radius architecture (RULES.md §Radius) --------------------------- */
+	--radius: 0.875rem;                       /* 14px — shadcn base */
+	--radius-card: 1rem;                      /* 16px cards, panels */
+	--radius-card-inner: 0.75rem;             /* 12px nested containers */
+	--radius-chip: 0.25rem;                   /* 4px kbd, tag badges */
+	--radius-pill: 9999px;                    /* buttons, chips, search */
+
+	/* Typography -------------------------------------------------------- */
+	--font-display: var(--font-geist-sans, "Geist"), system-ui, sans-serif;
+	--font-body: "Inter", system-ui, -apple-system, sans-serif;
+	--font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+	--font-serif: "Instrument Serif", Georgia, serif;
+
+	/* Motion (RULES.md §Motion) ---------------------------------------- */
+	--ease-reveal: cubic-bezier(0.215, 0.61, 0.355, 1);
+	--ease-ui: cubic-bezier(0.4, 0, 0.2, 1);
+	--duration-press: 75ms;
+	--duration-hover: 200ms;
+	--duration-reveal: 600ms;
+
+	/* Shadows (RULES.md §Shadows — tinted, layered) -------------------- */
+	--shadow-card:
+		0 0 0 1px hsl(234.55 17.46% 12.35% / 0.06),
+		0 2px 6px -2px hsl(234.55 17.46% 12.35% / 0.06),
+		0 16px 40px -8px hsl(234.55 17.46% 12.35% / 0.05),
+		inset 0 0.5px 0 hsl(0 0% 100% / 0.6);
+	--shadow-card-hover:
+		0 0 0 1px hsl(234.55 17.46% 12.35% / 0.10),
+		0 4px 12px -2px hsl(234.55 17.46% 12.35% / 0.08),
+		0 24px 56px -12px hsl(234.55 17.46% 12.35% / 0.08),
+		inset 0 0.5px 0 hsl(0 0% 100% / 0.6);
+	--shadow-button:
+		0 0 0 1px hsl(234.55 17.46% 12.35% / 0.9),
+		0 2px 4px hsl(234.55 17.46% 12.35% / 0.12),
+		inset 0 8px 18px -8px hsl(0 0% 100% / 0.32);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+	/* Dark slab surfaces — used when a section opts in via `<section class="dark">`
+	   rather than as a user-togglable theme (see spec §11 out-of-scope). */
+	--background: var(--dark-slab);
+	--foreground: hsl(0 0% 98%);
+	--card: var(--dark-surface);
+	--card-foreground: hsl(0 0% 98%);
+	--popover: var(--dark-surface);
+	--popover-foreground: hsl(0 0% 98%);
+	--primary: hsl(0 0% 98%);
+	--primary-foreground: var(--dark-slab);
+	--secondary: var(--dark-surface);
+	--secondary-foreground: hsl(0 0% 98%);
+	--muted: hsl(228 13% 54%);
+	--muted-foreground: hsl(225 10% 72%);
+	--accent: var(--dark-surface);
+	--accent-foreground: hsl(0 0% 98%);
+	--border: hsl(0 0% 100% / 0.08);
+	--input: hsl(0 0% 100% / 0.12);
+	--ring: var(--accent-cyan);
+	--sidebar: var(--dark-slab);
+	--sidebar-foreground: hsl(0 0% 98%);
+	--sidebar-border: hsl(0 0% 100% / 0.08);
+	--shadow-card:
+		0 0 0 1px hsl(0 0% 100% / 0.06),
+		0 2px 6px -2px hsl(0 0% 0% / 0.40),
+		0 16px 40px -8px hsl(0 0% 0% / 0.50),
+		inset 0 0.5px 0 hsl(0 0% 100% / 0.08);
+}
+
+@theme inline {
+	/* Colors ----------------------------------------------------------- */
+	--color-background: var(--background);
+	--color-background-news: var(--background-news);
+	--color-surface-cream: var(--surface-cream);
+	--color-foreground: var(--foreground);
+	--color-foreground-news: var(--foreground-news);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+	--color-dark-slab: var(--dark-slab);
+	--color-dark-surface: var(--dark-surface);
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-accent-cyan: var(--accent-cyan);
+	--color-accent-purple: var(--accent-purple);
+	--color-accent-mint: var(--accent-mint);
+	--color-destructive: var(--destructive);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-chart-1: var(--chart-1);
+	--color-chart-2: var(--chart-2);
+	--color-chart-3: var(--chart-3);
+	--color-chart-4: var(--chart-4);
+	--color-chart-5: var(--chart-5);
+	--color-sidebar: var(--sidebar);
+	--color-sidebar-foreground: var(--sidebar-foreground);
+	--color-sidebar-primary: var(--sidebar-primary);
+	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+	--color-sidebar-accent: var(--sidebar-accent);
+	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+	--color-sidebar-border: var(--sidebar-border);
+	--color-sidebar-ring: var(--sidebar-ring);
+
+	/* Fonts ------------------------------------------------------------ */
+	--font-sans: var(--font-body);            /* shadcn/Tailark default */
+	--font-display: var(--font-display);
+	--font-body: var(--font-body);
+	--font-mono: var(--font-mono);
+	--font-serif: var(--font-serif);
+	--font-heading: var(--font-display);
+
+	/* Radii ------------------------------------------------------------ */
+	--radius-sm: calc(var(--radius) * 0.6);
+	--radius-md: calc(var(--radius) * 0.8);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) * 1.4);
+	--radius-2xl: calc(var(--radius) * 1.8);
+	--radius-card: var(--radius-card);
+	--radius-card-inner: var(--radius-card-inner);
+	--radius-chip: var(--radius-chip);
+	--radius-pill: var(--radius-pill);
+
+	/* Motion ----------------------------------------------------------- */
+	--ease-reveal: var(--ease-reveal);
+	--ease-ui: var(--ease-ui);
+	--default-transition-duration: var(--duration-hover);
+	--default-transition-timing-function: var(--ease-ui);
+
+	/* Shadows ---------------------------------------------------------- */
+	--shadow-card: var(--shadow-card);
+	--shadow-card-hover: var(--shadow-card-hover);
+	--shadow-button: var(--shadow-button);
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-  html {
-    @apply font-sans;
-  }
+	*,
+	*::before,
+	*::after {
+		border-color: var(--border);
+	}
+
+	html {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
+		font-family: var(--font-body);
+	}
+
+	body {
+		background: var(--background);
+		color: var(--foreground);
+		font-family: var(--font-body);
+		font-weight: 300;
+		font-size: 1rem;
+		line-height: 1.5;
+		letter-spacing: -0.005em;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: var(--font-display);
+		font-feature-settings: "ss01" on, "cv11" on;
+		text-wrap: balance;
+		color: var(--foreground);
+	}
+
+	h1 {
+		font-size: clamp(2.625rem, 1.5rem + 4vw, 4.5rem);   /* 42 → 72px */
+		font-weight: 600;
+		line-height: 0.98;
+		letter-spacing: -0.035em;
+	}
+
+	h2 {
+		font-size: clamp(2rem, 1.5rem + 2.5vw, 3rem);        /* 32 → 48px */
+		font-weight: 600;
+		line-height: 1.04;
+		letter-spacing: -0.028em;
+	}
+
+	h3 {
+		font-size: 1.75rem;                                  /* 28px */
+		font-weight: 500;
+		line-height: 1.1;
+		letter-spacing: -0.02em;
+	}
+
+	h4 {
+		font-size: 1.375rem;                                 /* 22px */
+		font-weight: 500;
+		line-height: 1.2;
+		letter-spacing: -0.015em;
+	}
+
+	p {
+		text-wrap: pretty;
+	}
+
+	/* Utility classes that span components --------------------------- */
+
+	.eyebrow {
+		font-family: var(--font-mono);
+		font-size: 0.6875rem;                                /* 11px */
+		font-weight: 400;
+		text-transform: uppercase;
+		letter-spacing: 0.14em;
+		color: var(--muted);
+	}
+
+	.serif-accent {
+		font-family: var(--font-serif);
+		font-style: italic;
+		font-weight: 400;
+		letter-spacing: -0.015em;
+	}
+
+	.tabular {
+		font-variant-numeric: tabular-nums;
+	}
+
+	/* Tabular numerics by default on anything numeric-ish so we don't
+	   forget it per-component (stats, dates, counts, percentages). */
+	time,
+	[data-numeric] {
+		font-variant-numeric: tabular-nums;
+	}
+
+	/* Respect user preference — every animation and transition is
+	   neutralized, not just ones we authored. */
+	@media (prefers-reduced-motion: reduce) {
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			scroll-behavior: auto !important;
+		}
+	}
 }

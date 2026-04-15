@@ -1,4 +1,5 @@
 import { WpMark } from "@/components/shared/WpMark";
+import { MegaMenu } from "@/components/shared/MegaMenu";
 
 export type NavActiveSlug = "showcase" | "plugins" | "themes" | "develop" | "news";
 
@@ -41,7 +42,7 @@ export function Nav({ active }: NavProps) {
 					{PRIMARY_LINKS.map(({ label, slug, href, caret }) => {
 						const isActive = active === slug;
 						return (
-							<li key={slug}>
+							<li key={slug} className={caret ? "relative group" : undefined}>
 								<a
 									href={href}
 									aria-haspopup={caret ? "true" : undefined}
@@ -61,6 +62,7 @@ export function Nav({ active }: NavProps) {
 										</span>
 									)}
 								</a>
+								{caret && <MegaMenu />}
 							</li>
 						);
 					})}

@@ -23,6 +23,11 @@ cd "$(dirname "$0")/.."
 
 FAIL=0
 SCAN_ROOT="src"
+# NOTE: `--exclude-dir=ui` is a grep basename match, not a path match — any
+# directory named `ui` anywhere in the scan tree will be skipped. Currently
+# the only such directory is `src/components/ui/` (vendored shadcn primitives
+# that we patch on pull, not in place — see RULES.md and Task 2's Lucide fix).
+# If a future task adds another `ui/` subtree, revisit this.
 EXCLUDES=(--exclude-dir=node_modules --exclude-dir=.next --exclude-dir=out --exclude-dir=ui)
 INCLUDES=(--include="*.tsx" --include="*.ts" --include="*.css")
 

@@ -178,6 +178,7 @@
 	--color-accent-purple: var(--accent-purple);
 	--color-accent-mint: var(--accent-mint);
 	--color-destructive: var(--destructive);
+	--color-destructive-foreground: var(--destructive-foreground);
 	--color-card: var(--card);
 	--color-card-foreground: var(--card-foreground);
 	--color-popover: var(--popover);
@@ -218,6 +219,9 @@
 	/* Motion ----------------------------------------------------------- */
 	--ease-reveal: var(--ease-reveal);
 	--ease-ui: var(--ease-ui);
+	--duration-press: var(--duration-press);
+	--duration-hover: var(--duration-hover);
+	--duration-reveal: var(--duration-reveal);
 	--default-transition-duration: var(--duration-hover);
 	--default-transition-timing-function: var(--ease-ui);
 

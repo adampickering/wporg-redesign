@@ -87,7 +87,7 @@ export function Nav({ active }: NavProps) {
 							"rounded-pill bg-foreground text-[color:var(--color-background)]",
 							"font-display text-[13px] font-medium tracking-[-0.005em]",
 							"no-underline leading-none",
-							"transition-transform duration-[75ms]",
+							"transition-[transform,box-shadow] duration-[75ms]",
 							// Fast ease-out for press: snappy shrink, not the Material slow-in curve
 							"[transition-timing-function:cubic-bezier(0,0,0.2,1)]",
 							"active:scale-[0.96]",

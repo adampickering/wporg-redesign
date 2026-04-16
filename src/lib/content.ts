@@ -147,6 +147,28 @@ type HomepageContent = {
 	};
 };
 
+type PluginsContent = {
+	hero: {
+		eyebrow: string;
+		headlineBefore: string;
+		headlineAccent: string;
+		headlineAfter: string;
+		searchPlaceholder: string;
+		trending: string[];
+	};
+};
+
+export const PLUGINS: PluginsContent = {
+	hero: {
+		eyebrow: "60,000+ plugins",
+		headlineBefore: "A marketplace built in the",
+		headlineAccent: "open",
+		headlineAfter: ".",
+		searchPlaceholder: "Search plugins by name, category, or author…",
+		trending: ["AI", "SEO", "Analytics", "Forms", "WooCommerce"],
+	},
+};
+
 export const HOMEPAGE: HomepageContent = {
 	pillars: {
 		eyebrow: "One platform",

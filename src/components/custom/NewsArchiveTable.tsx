@@ -44,6 +44,7 @@ export function NewsArchiveTable() {
 					onValueChange={handleValueChange}
 					className="flex-wrap gap-1.5"
 					aria-label="Filter posts by category"
+					render={<div role="toolbar" />}
 				>
 					{NEWS.archiveCategories.map((cat) => (
 						<ToggleGroupItem

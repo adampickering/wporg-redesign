@@ -5,7 +5,7 @@ import AxeBuilder from "@axe-core/playwright";
 // its route here as the last step. Tests for paths NOT in this set are marked
 // `test.skip`, so running the full suite does not fail on 404s from routes
 // that haven't been built yet.
-const BUILT_ROUTES = new Set(["/"]);
+const BUILT_ROUTES = new Set(["/", "/news/"]);
 
 for (const path of ["/", "/news/", "/plugins/"]) {
 	test(`a11y: ${path}`, async ({ page }) => {

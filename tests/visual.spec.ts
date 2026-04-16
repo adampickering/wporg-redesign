@@ -17,3 +17,12 @@ test("news page full-page snapshot", async ({ page }) => {
 		maxDiffPixelRatio: 0.01,
 	});
 });
+
+test("plugins page full-page snapshot", async ({ page }) => {
+	await page.goto("/plugins/");
+	await page.waitForLoadState("networkidle");
+	await expect(page).toHaveScreenshot("plugins.png", {
+		fullPage: true,
+		maxDiffPixelRatio: 0.01,
+	});
+});

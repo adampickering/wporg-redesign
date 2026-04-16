@@ -68,7 +68,7 @@ export function PluginCardGrid() {
 							</div>
 
 							{/* Active installs */}
-							<span className="tabular text-[11px] text-muted leading-none">
+							<span className="tabular text-[11px] text-muted-foreground leading-none">
 								{plugin.installs} active
 							</span>
 

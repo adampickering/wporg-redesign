@@ -2,6 +2,35 @@
 // lets us iterate on messaging without touching JSX. Explicit types keep
 // every section's shape enforceable as content.ts grows.
 
+type PressLink = {
+	label: string;
+	value: string;
+	href: string;
+};
+
+type NewsContent = {
+	hero: {
+		headlineBefore: string;
+		headlineAccent: string;
+		headlineAfter: string;
+		press: PressLink[];
+	};
+};
+
+export const NEWS: NewsContent = {
+	hero: {
+		headlineBefore: "The",
+		headlineAccent: "open",
+		headlineAfter: "newsroom.",
+		press: [
+			{ label: "Press inquiries", value: "press@wp.org", href: "mailto:press@wp.org" },
+			{ label: "Community events", value: "events@wp.org", href: "mailto:events@wp.org" },
+			{ label: "Brand assets", value: "Download pack ↓", href: "#" },
+			{ label: "RSS feed", value: "Subscribe", href: "/news/feed.xml" },
+		],
+	},
+};
+
 type Cta = { label: string; href: string };
 type Stat = { label: string; value: string };
 

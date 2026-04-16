@@ -14,6 +14,9 @@ for (const path of ["/", "/news/", "/plugins/"]) {
 			`route ${path} not built yet — add to BUILT_ROUTES once Phase 3/4 lands it`,
 		);
 		await page.goto(path);
+		// Wait for StaggerReveal enter animations to complete before running axe.
+		// Max animation: 600ms duration + 500ms max stagger delay = 1100ms total.
+		await page.waitForTimeout(1200);
 		const results = await new AxeBuilder({ page }).analyze();
 		const serious = results.violations
 			.filter((v) => v.impact === "serious" || v.impact === "critical")

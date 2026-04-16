@@ -8,6 +8,15 @@ type PressLink = {
 	href: string;
 };
 
+type FeaturedPost = {
+	category: string;
+	date: string;
+	readTime: string;
+	title: string;
+	excerpt: string;
+	href: string;
+};
+
 type NewsContent = {
 	hero: {
 		headlineBefore: string;
@@ -15,9 +24,19 @@ type NewsContent = {
 		headlineAfter: string;
 		press: PressLink[];
 	};
+	featuredPost: FeaturedPost;
 };
 
 export const NEWS: NewsContent = {
+	featuredPost: {
+		category: "Releases",
+		date: "April 14, 2026",
+		readTime: "8 min read",
+		title: "WordPress 7.0 RC2 is ready for testing",
+		excerpt:
+			"The second release candidate brings the new collaborative editing layer, expanded block patterns, and the first set of AI-assisted authoring tools behind a feature flag.",
+		href: "#",
+	},
 	hero: {
 		headlineBefore: "The",
 		headlineAccent: "open",

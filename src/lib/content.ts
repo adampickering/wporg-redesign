@@ -17,6 +17,15 @@ type FeaturedPost = {
 	href: string;
 };
 
+type Cta = { label: string; href: string };
+
+type ArchivePost = {
+	date: string;
+	category: string;
+	title: string;
+	href: string;
+};
+
 type NewsContent = {
 	hero: {
 		headlineBefore: string;
@@ -25,6 +34,9 @@ type NewsContent = {
 		press: PressLink[];
 	};
 	featuredPost: FeaturedPost;
+	archivePosts: ArchivePost[];
+	archiveCategories: string[];
+	archiveCta: Cta;
 };
 
 export const NEWS: NewsContent = {
@@ -48,9 +60,21 @@ export const NEWS: NewsContent = {
 			{ label: "RSS feed", value: "Subscribe", href: "/news/feed.xml" },
 		],
 	},
+	archivePosts: [
+		{ date: "Apr 11, 2026", category: "Community", title: "Celebrating Community at WordCamp Asia 2026", href: "#" },
+		{ date: "Apr 07, 2026", category: "Events", title: "How to watch WordCamp Asia 2026 live", href: "#" },
+		{ date: "Apr 02, 2026", category: "Events", title: "From AI to open source at WordCamp Asia 2026", href: "#" },
+		{ date: "Mar 26, 2026", category: "Releases", title: "WordPress 7.0 Release Candidate 2", href: "#" },
+		{ date: "Mar 25, 2026", category: "Development", title: "WP Packages is working the way open source should", href: "#" },
+		{ date: "Mar 18, 2026", category: "People", title: "People of WordPress: Sunita Rai", href: "#" },
+		{ date: "Mar 10, 2026", category: "Development", title: "A deep look at the new collaborative editing layer", href: "#" },
+		{ date: "Mar 04, 2026", category: "Community", title: "Five for the Future: six months in", href: "#" },
+		{ date: "Feb 27, 2026", category: "Development", title: "Block patterns directory hits 5,000 submissions", href: "#" },
+	],
+	archiveCategories: ["All", "Releases", "Community", "Development", "Events", "People"],
+	archiveCta: { label: "See all posts →", href: "#" },
 };
 
-type Cta = { label: string; href: string };
 type Stat = { label: string; value: string };
 
 type NewsTeaser = {

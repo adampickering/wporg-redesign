@@ -24,12 +24,21 @@ type Pillar = {
 	link: Cta;
 };
 
+type ShowcaseLogo = {
+	name: string;
+};
+
 type HomepageContent = {
 	hero: HeroSection;
 	pillars: {
 		eyebrow: string;
 		headline: string;
 		items: Pillar[];
+	};
+	showcase: {
+		eyebrow: string;
+		headline: string;
+		logos: ShowcaseLogo[];
 	};
 };
 
@@ -56,6 +65,18 @@ export const HOMEPAGE: HomepageContent = {
 				body: "Make your site do whatever you need it to. A newsletter, a store, an analytics dashboard — you're in control.",
 				link: { label: "Browse plugins →", href: "/plugins/" },
 			},
+		],
+	},
+	showcase: {
+		eyebrow: "Who builds on WordPress",
+		headline: "Every kind of story, published here.",
+		logos: [
+			{ name: "Rolling Stone" },
+			{ name: "TIME" },
+			{ name: "NASA" },
+			{ name: "Microsoft" },
+			{ name: "Harvard" },
+			{ name: "TechCrunch" },
 		],
 	},
 	hero: {

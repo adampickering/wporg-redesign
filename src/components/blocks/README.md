@@ -34,4 +34,4 @@ Verified slugs (all return 200):
 
 | Component              | Source URL                                         | Variant rationale              |
 | ---------------------- | -------------------------------------------------- | ------------------------------ |
-| (filled in per task)   |                                                    |                                |
+| `Footer`               | https://tailark.com/dusk/footer (footer-2)         | 4-column sitemap grid (md:grid-cols-5 with logo in col-span-2), bottom copyright bar — closest match to spec. Surface retheemed to dark-slab; social icons removed; language hint added. |

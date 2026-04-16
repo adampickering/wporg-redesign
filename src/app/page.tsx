@@ -1,6 +1,7 @@
 import { WpMark } from "@/components/shared/WpMark";
 import { PromoBar } from "@/components/shared/PromoBar";
 import { Nav } from "@/components/shared/Nav";
+import { Footer } from "@/components/shared/Footer";
 
 export default function Home() {
 	return (
@@ -17,6 +18,7 @@ export default function Home() {
 					<WpMark className="w-12 h-12 text-foreground" />
 				</div>
 			</main>
+			<Footer />
 		</>
 	);
 }

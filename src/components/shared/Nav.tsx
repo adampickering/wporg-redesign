@@ -1,4 +1,4 @@
-import { WpMark } from "@/components/shared/WpMark";
+import { WpWordmark } from "@/components/shared/WpWordmark";
 import { MegaMenu } from "@/components/shared/MegaMenu";
 import { SearchTrigger } from "@/components/shared/SearchTrigger";
 
@@ -23,16 +23,13 @@ export function Nav({ active }: NavProps) {
 				aria-label="Primary"
 				className="max-w-[1280px] mx-auto px-8 py-[22px] grid grid-cols-[auto_1fr_auto] items-center gap-8"
 			>
-				{/* Left: Brand */}
+				{/* Left: Brand — full WordPress wordmark, dark on light bg */}
 				<a
 					href="/"
 					aria-label="WordPress home"
-					className="flex items-center gap-2.5 text-foreground no-underline"
+					className="flex items-center text-foreground no-underline"
 				>
-					<WpMark className="w-6 h-6 text-foreground" />
-					<span className="font-display font-semibold text-[17px] tracking-[-0.02em] leading-none">
-						WordPress
-					</span>
+					<WpWordmark className="h-7 w-auto text-foreground" />
 				</a>
 
 				{/* Center: Primary links */}

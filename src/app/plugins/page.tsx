@@ -4,6 +4,7 @@ import { MarketplaceShelf } from "@/components/blocks/MarketplaceShelf";
 import { CategoryRail } from "@/components/custom/CategoryRail";
 import { PluginCardGrid } from "@/components/custom/PluginCardGrid";
 import { InnovatorSpotlight } from "@/components/blocks/InnovatorSpotlight";
+import { BuildPluginCta } from "@/components/blocks/BuildPluginCta";
 
 export default function PluginsPage() {
 	return (
@@ -13,6 +14,7 @@ export default function PluginsPage() {
 			<CategoryRail />
 			<PluginCardGrid />
 			<InnovatorSpotlight />
+			<BuildPluginCta />
 		</SiteChrome>
 	);
 }

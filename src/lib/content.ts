@@ -5,6 +5,13 @@
 type Cta = { label: string; href: string };
 type Stat = { label: string; value: string };
 
+type NewsTeaser = {
+	category: string;
+	title: string;
+	date: string;
+	href: string;
+};
+
 type HeroSection = {
 	eyebrow: string;
 	headlineBefore: string;
@@ -59,6 +66,12 @@ type HomepageContent = {
 	stats: {
 		eyebrow: string;
 		items: StatItem[];
+	};
+	latestNews: {
+		eyebrow: string;
+		headline: string;
+		items: NewsTeaser[];
+		cta: Cta;
 	};
 };
 
@@ -119,6 +132,16 @@ export const HOMEPAGE: HomepageContent = {
 			{ value: "13,000+", label: "themes to choose from" },
 			{ value: "200+", label: "contributor teams worldwide" },
 		],
+	},
+	latestNews: {
+		eyebrow: "Latest from the project",
+		headline: "News",
+		items: [
+			{ category: "Community", title: "Celebrating Community at WordCamp Asia 2026", date: "Apr 11, 2026", href: "/news/" },
+			{ category: "Events", title: "How to watch WordCamp Asia 2026 live", date: "Apr 7, 2026", href: "/news/" },
+			{ category: "Releases", title: "WordPress 7.0 Release Candidate 2", date: "Mar 26, 2026", href: "/news/" },
+		],
+		cta: { label: "More news →", href: "/news/" },
 	},
 	hero: {
 		eyebrow: "WordPress 6.9 — Available now",

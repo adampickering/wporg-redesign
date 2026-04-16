@@ -4,6 +4,7 @@ import { Pillars } from "@/components/blocks/Pillars";
 import { LogoCloud } from "@/components/blocks/LogoCloud";
 import { ShowcaseBento } from "@/components/custom/ShowcaseBento";
 import { Stats } from "@/components/blocks/Stats";
+import { NewsPreview } from "@/components/blocks/NewsPreview";
 
 export default function Home() {
 	return (
@@ -13,6 +14,7 @@ export default function Home() {
 			<LogoCloud />
 			<ShowcaseBento />
 			<Stats />
+			<NewsPreview />
 		</SiteChrome>
 	);
 }

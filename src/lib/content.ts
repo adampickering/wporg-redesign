@@ -33,6 +33,11 @@ type ShowcaseSite = {
 	featured?: boolean;
 };
 
+type StatItem = {
+	value: string;
+	label: string;
+};
+
 type HomepageContent = {
 	hero: HeroSection;
 	pillars: {
@@ -50,6 +55,10 @@ type HomepageContent = {
 		headline: string;
 		sites: ShowcaseSite[];
 		cta: Cta;
+	};
+	stats: {
+		eyebrow: string;
+		items: StatItem[];
 	};
 };
 
@@ -101,6 +110,15 @@ export const HOMEPAGE: HomepageContent = {
 			{ name: "Sony Music" },
 		],
 		cta: { label: "Explore the Showcase →", href: "/showcase/" },
+	},
+	stats: {
+		eyebrow: "The scale of WordPress",
+		items: [
+			{ value: "43%", label: "of the entire internet" },
+			{ value: "60,000+", label: "plugins available" },
+			{ value: "13,000+", label: "themes to choose from" },
+			{ value: "200+", label: "contributor teams worldwide" },
+		],
 	},
 	hero: {
 		eyebrow: "WordPress 6.9 — Available now",

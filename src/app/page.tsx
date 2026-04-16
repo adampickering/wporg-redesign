@@ -3,6 +3,7 @@ import { HomepageHero } from "@/components/blocks/HomepageHero";
 import { Pillars } from "@/components/blocks/Pillars";
 import { LogoCloud } from "@/components/blocks/LogoCloud";
 import { ShowcaseBento } from "@/components/custom/ShowcaseBento";
+import { Stats } from "@/components/blocks/Stats";
 
 export default function Home() {
 	return (
@@ -11,6 +12,7 @@ export default function Home() {
 			<Pillars />
 			<LogoCloud />
 			<ShowcaseBento />
+			<Stats />
 		</SiteChrome>
 	);
 }

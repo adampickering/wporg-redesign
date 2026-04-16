@@ -15,10 +15,7 @@ export function HomepageHero() {
 					{/* ── Centered content column ─────────────────────────────── */}
 					<div className="text-center sm:mx-auto sm:w-10/12 lg:mr-auto lg:mt-0 lg:w-4/5 lg:mx-auto">
 
-						{/* Eyebrow — color overridden to muted-foreground (#525862) to
-						    satisfy WCAG AA 4.5:1 contrast on the warm off-white bg.
-						    The global .eyebrow token (#7A8099) falls short at 3.83:1. */}
-						<p className="eyebrow mb-5 text-[color:var(--muted-foreground)]">{hero.eyebrow}</p>
+						<p className="eyebrow mb-5">{hero.eyebrow}</p>
 
 						{/* Display headline */}
 						<h1 className="font-display">
@@ -107,7 +104,7 @@ export function HomepageHero() {
 									<div className="tabular font-display text-[26px] font-medium tracking-[-0.02em] text-foreground">
 										{s.value}
 									</div>
-									<div className="eyebrow mt-1 text-[color:var(--muted-foreground)]">{s.label}</div>
+									<div className="eyebrow mt-1">{s.label}</div>
 								</div>
 							))}
 						</div>

@@ -302,7 +302,12 @@
 		font-weight: 400;
 		text-transform: uppercase;
 		letter-spacing: 0.14em;
-		color: var(--muted);
+		/* --muted-foreground (#525862) gives ~7.4:1 on #FAFAF7 (AA AAA).
+		   --muted (#7A8099) failed at ~3.3:1 — too light for the light
+		   surface that's the project's primary background. Dark-slab
+		   sections that use .eyebrow should override color inline to
+		   text-white/60 or similar. */
+		color: var(--muted-foreground);
 	}
 
 	.serif-accent {

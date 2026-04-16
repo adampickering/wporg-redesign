@@ -2,6 +2,10 @@
 
 A directional prototype addressing Matt's design to-do list. Not production.
 
+## Live preview
+
+https://adampickering.github.io/wporg-redesign/
+
 ## What to look for
 
 This prototype is structured so each of Matt's specific points has a visible answer:

@@ -21,13 +21,13 @@ export function HomepageHero() {
 						<h1 className="font-display">
 							{hero.headlineBefore}
 							<br />
-							Still the{" "}
+							{hero.headlineBridge}{" "}
 							<em className="serif-accent">{hero.headlineAccent}</em>
 							{hero.headlineAfter}
 						</h1>
 
 						{/* Subtext */}
-						<p className="font-body text-[18px] leading-[1.5] font-light text-muted-foreground max-w-[52ch] mx-auto mt-6">
+						<p className="text-[clamp(16px,1.4vw,18px)] leading-[1.5] font-light text-muted-foreground max-w-[52ch] mx-auto mt-6">
 							{hero.subtext}
 						</p>
 
@@ -38,13 +38,13 @@ export function HomepageHero() {
 								className={[
 									// Pill shape, dark fill
 									"inline-flex items-center justify-center",
-									"h-12 px-6 rounded-[9999px]",
-									"bg-foreground text-[color:var(--color-background)]",
+									"h-12 px-6 rounded-pill",
+									"bg-foreground text-background",
 									"font-medium text-[15px] no-underline whitespace-nowrap",
-									// Tinted layered shadow
-									"shadow-[0_0_0_1px_hsl(234.55_17.46%_12.35%/0.9),0_2px_4px_hsl(234.55_17.46%_12.35%/0.12),inset_0_8px_18px_-8px_hsl(0_0%_100%/0.32)]",
+									// Design-system tinted card shadow tokens
+									"shadow-button",
 									// Transitions — explicit properties only
-									"transition-[shadow,scale] duration-[200ms]",
+									"transition-[box-shadow,transform] duration-[200ms]",
 									"[transition-timing-function:cubic-bezier(0.4,0,0.2,1)]",
 									// Press feedback — fast ease-out per spec
 									"active:scale-[0.97] active:[transition-duration:75ms] active:[transition-timing-function:cubic-bezier(0,0,0.2,1)]",
@@ -56,17 +56,16 @@ export function HomepageHero() {
 							<a
 								href={hero.secondaryCta.href}
 								className={[
-									// Pill shape, outlined
+									// Pill shape, outlined with hairline token
 									"inline-flex items-center justify-center",
-									"h-12 px-6 rounded-[9999px]",
-									"bg-transparent",
-									"border border-[hsl(234.55_17.46%_12.35%/0.18)]",
+									"h-12 px-6 rounded-pill",
+									"bg-transparent border border-border",
 									"text-foreground",
 									"font-medium text-[15px] no-underline whitespace-nowrap",
 									// Transitions — explicit properties only
-									"transition-[border-color,scale] duration-[200ms]",
+									"transition-[border-color,transform] duration-[200ms]",
 									"[transition-timing-function:cubic-bezier(0.4,0,0.2,1)]",
-									"hover:border-[hsl(234.55_17.46%_12.35%/0.32)]",
+									"hover:border-foreground",
 									// Press feedback — fast ease-out per spec
 									"active:scale-[0.97] active:[transition-duration:75ms] active:[transition-timing-function:cubic-bezier(0,0,0.2,1)]",
 								].join(" ")}

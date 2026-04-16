@@ -28,6 +28,11 @@ type ShowcaseLogo = {
 	name: string;
 };
 
+type ShowcaseSite = {
+	name: string;
+	featured?: boolean;
+};
+
 type HomepageContent = {
 	hero: HeroSection;
 	pillars: {
@@ -39,6 +44,12 @@ type HomepageContent = {
 		eyebrow: string;
 		headline: string;
 		logos: ShowcaseLogo[];
+	};
+	showcaseBento: {
+		eyebrow: string;
+		headline: string;
+		sites: ShowcaseSite[];
+		cta: Cta;
 	};
 };
 
@@ -78,6 +89,18 @@ export const HOMEPAGE: HomepageContent = {
 			{ name: "Harvard" },
 			{ name: "TechCrunch" },
 		],
+	},
+	showcaseBento: {
+		eyebrow: "Showcase",
+		headline: "A universe of possibilities, all built on WordPress.",
+		sites: [
+			{ name: "The New Yorker", featured: true },
+			{ name: "BBC America" },
+			{ name: "TechCrunch" },
+			{ name: "Variety" },
+			{ name: "Sony Music" },
+		],
+		cta: { label: "Explore the Showcase →", href: "/showcase/" },
 	},
 	hero: {
 		eyebrow: "WordPress 6.9 — Available now",

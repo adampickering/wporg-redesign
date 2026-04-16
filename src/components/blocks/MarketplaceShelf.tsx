@@ -40,8 +40,8 @@ export function MarketplaceShelf() {
 									"border border-dark-border",
 									/* Dark-mode shadow: single white ring that glows slightly on hover.
 									   No translateY — shadow delta only (surfaces.md). */
-									"shadow-[0_0_0_1px_hsl(0_0%_100%/0.06)]",
-									"hover:shadow-[0_0_0_1px_hsl(0_0%_100%/0.12),0_0_24px_-4px_hsl(0_0%_100%/0.04)]",
+									"shadow-[0_0_0_1px_hsl(0_0%_100%/0.06),inset_0_0.5px_0_hsl(0_0%_100%/0.06),inset_0_-0.5px_0_hsl(0_0%_100%/0.03)]",
+									"hover:shadow-[0_0_0_1px_hsl(0_0%_100%/0.12),0_0_24px_-4px_hsl(0_0%_100%/0.04),inset_0_0.5px_0_hsl(0_0%_100%/0.08),inset_0_-0.5px_0_hsl(0_0%_100%/0.04)]",
 									"transition-[box-shadow]",
 									"duration-[200ms]",
 									"[transition-timing-function:cubic-bezier(0.4,0,0.2,1)]",

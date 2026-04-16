@@ -147,6 +147,15 @@ type HomepageContent = {
 	};
 };
 
+type FeaturedPlugin = {
+	name: string;
+	author: string;
+	pitch: string;
+	installs: string;
+	rating: number;
+	badge: string | null;
+};
+
 type PluginsContent = {
 	hero: {
 		eyebrow: string;
@@ -155,6 +164,11 @@ type PluginsContent = {
 		headlineAfter: string;
 		searchPlaceholder: string;
 		trending: string[];
+	};
+	featuredPlugins: {
+		eyebrow: string;
+		headline: string;
+		items: FeaturedPlugin[];
 	};
 };
 
@@ -166,6 +180,36 @@ export const PLUGINS: PluginsContent = {
 		headlineAfter: ".",
 		searchPlaceholder: "Search plugins by name, category, or author…",
 		trending: ["AI", "SEO", "Analytics", "Forms", "WooCommerce"],
+	},
+	featuredPlugins: {
+		eyebrow: "Updated weekly by humans",
+		headline: "Editor\u2019s picks this week",
+		items: [
+			{
+				name: "Twombly",
+				author: "Nick Hamze",
+				pitch: "A typewriter theme with a publisher's soul.",
+				installs: "2,400+",
+				rating: 4.9,
+				badge: "Editor\u2019s pick",
+			},
+			{
+				name: "Ollie",
+				author: "Mike McAlister",
+				pitch: "Professional block patterns for modern sites.",
+				installs: "18,000+",
+				rating: 4.8,
+				badge: "New",
+			},
+			{
+				name: "Block Visibility",
+				author: "Nick Diego",
+				pitch: "Show or hide any block by role, date, or logic.",
+				installs: "12,500+",
+				rating: 4.9,
+				badge: null,
+			},
+		],
 	},
 };
 

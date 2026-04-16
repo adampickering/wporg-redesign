@@ -1,5 +1,6 @@
 import { WpMark } from "@/components/shared/WpMark";
 import { MegaMenu } from "@/components/shared/MegaMenu";
+import { SearchTrigger } from "@/components/shared/SearchTrigger";
 
 export type NavActiveSlug = "showcase" | "plugins" | "themes" | "develop" | "news";
 
@@ -70,12 +71,7 @@ export function Nav({ active }: NavProps) {
 
 				{/* Right: Actions */}
 				<div className="flex items-center gap-3">
-					{/* Slot A — Task 12 will replace this with the ⌘K search trigger */}
-					<div
-						data-slot="search"
-						aria-hidden="true"
-						className="w-[200px] h-[36px] rounded-pill border border-dashed border-muted-foreground/30"
-					/>
+					<SearchTrigger />
 
 					<a
 						href="/sign-in/"

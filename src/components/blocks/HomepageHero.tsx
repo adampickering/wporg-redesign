@@ -75,7 +75,7 @@ export function HomepageHero() {
 						</div>
 
 						{/* ── Faux block editor panel ─────────────────────────── */}
-						<div className="mt-10 bg-dark-slab rounded-[14px] p-3.5 border border-[hsl(233_20%_22%)]">
+						<div className="mt-10 bg-dark-slab rounded-[14px] p-3.5 border border-dark-border">
 							<div className="bg-dark-surface rounded-[10px] min-h-[220px] grid grid-cols-[160px_1fr] overflow-hidden">
 								{/* Fake sidebar */}
 								<aside className="bg-[hsl(233_20%_10%)] p-3.5 border-r border-[hsl(233_20%_24%)]">

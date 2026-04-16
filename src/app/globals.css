@@ -48,6 +48,7 @@
 	/* Dark slabs -------------------------------------------------------- */
 	--dark-slab: hsl(222.86 24.14% 5.69%);      /* #0B0D12 */
 	--dark-surface: hsl(234.55 17.46% 12.35%);  /* #1A1B25 */
+	--dark-border: hsl(233 20% 22%);            /* hairline on dark surfaces */
 
 	/* Brand + accents --------------------------------------------------- */
 	--primary: hsl(206.85 67.77% 41.37%);       /* #2271B1 — WP blue */
@@ -168,6 +169,7 @@
 	--color-ring: var(--ring);
 	--color-dark-slab: var(--dark-slab);
 	--color-dark-surface: var(--dark-surface);
+	--color-dark-border: var(--dark-border);
 	--color-primary: var(--primary);
 	--color-primary-foreground: var(--primary-foreground);
 	--color-secondary: var(--secondary);

@@ -1,3 +1,6 @@
+// @phosphor-icons/react uses createContext internally, so any component that
+// imports from it must render on the client. That's why this leaf button
+// carries "use client" despite having no state or effects.
 "use client";
 
 import { MagnifyingGlass } from "@phosphor-icons/react";
@@ -20,10 +23,12 @@ export function SearchTrigger({
 				"bg-card border border-border",
 				// Layout
 				"flex items-center gap-2.5 px-[14px]",
-				// Shadow: 2-layer tinted card shadow
-				"shadow-[0_1px_2px_hsl(234.55_17.46%_12.35%/0.04),inset_0_1px_0_hsl(0_0%_100%/0.6)]",
-				// Hover: shadow grows slightly
-				"hover:shadow-[0_2px_6px_hsl(234.55_17.46%_12.35%/0.08),inset_0_1px_0_hsl(0_0%_100%/0.6)]",
+				// Shadow: use the design-system card shadow tokens so the
+				// shadow tint tracks the foreground color via globals.css.
+				"shadow-card hover:shadow-card-hover",
+				// Focus ring (keyboard users) — WP blue primary outline.
+				"focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
+				"focus:outline-none",
 				// Press feedback: fast ease-out (snappy shrink, not Material slow-in)
 				"transition-[transform,box-shadow] duration-[75ms]",
 				"[transition-timing-function:cubic-bezier(0,0,0.2,1)]",

@@ -1,5 +1,9 @@
 import { WpMark } from "@/components/shared/WpMark";
 
+// Computed at module-eval time (build time for static export) so every
+// render of <Footer /> uses the same value — no hydration mismatch risk.
+const CURRENT_YEAR = new Date().getFullYear();
+
 const links = [
 	{
 		group: "WordPress",
@@ -45,8 +49,6 @@ const links = [
 ];
 
 export function Footer() {
-	const year = new Date().getFullYear();
-
 	return (
 		<footer className="bg-[color:var(--color-dark-slab)]">
 			<div className="mx-auto max-w-[1280px] px-8 py-[96px]">
@@ -66,32 +68,40 @@ export function Footer() {
 					</div>
 
 					{/* Four sitemap columns */}
-					<div className="grid grid-cols-2 gap-6 sm:grid-cols-4 md:col-span-3">
+					<nav aria-label="Footer" className="grid grid-cols-2 gap-6 sm:grid-cols-4 md:col-span-3">
 						{links.map((col) => (
-							<div key={col.group} className="space-y-3 text-sm">
-								<span className="block font-mono text-[11px] uppercase tracking-[0.14em] text-white/60">
+							<div key={col.group} className="text-sm">
+								<h2 className="block font-mono text-[11px] uppercase tracking-[0.14em] text-white/60 mb-3">
 									{col.group}
-								</span>
-								{col.items.map((item) => (
-									<a
-										key={item.title}
-										href={item.href}
-										className="text-white/80 hover:text-white block transition-colors duration-[150ms] [transition-timing-function:cubic-bezier(0.4,0,0.2,1)] no-underline"
-									>
-										{item.title}
-									</a>
-								))}
+								</h2>
+								<ul role="list" className="list-none m-0 p-0 space-y-3">
+									{col.items.map((item) => (
+										<li key={item.title}>
+											<a
+												href={item.href}
+												className="text-white/80 hover:text-white block transition-colors duration-[150ms] [transition-timing-function:cubic-bezier(0.4,0,0.2,1)] no-underline"
+											>
+												{item.title}
+											</a>
+										</li>
+									))}
+								</ul>
 							</div>
 						))}
-					</div>
+					</nav>
 				</div>
 
 				{/* Bottom row */}
 				<div className="mt-16 flex flex-wrap items-center justify-between gap-6 border-t border-white/10 pt-8">
 					<span className="text-white/60 text-sm order-last md:order-first">
-						© {year} WordPress Foundation
+						© {CURRENT_YEAR} WordPress Foundation
 					</span>
-					<span className="text-white/60 text-sm order-first md:order-last font-mono text-[11px] tracking-[0.06em]">
+					{/* Language hint is inert in Phase 1 — a future task will turn
+					    it into a real switcher. Hidden from AT until then. */}
+					<span
+						aria-hidden="true"
+						className="text-white/60 text-sm order-first md:order-last font-mono text-[11px] tracking-[0.06em]"
+					>
 						English (US)
 					</span>
 				</div>

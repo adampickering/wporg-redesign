@@ -17,11 +17,47 @@ type HeroSection = {
 	stats: Stat[];
 };
 
+type Pillar = {
+	icon: "Palette" | "Cube" | "Broadcast";
+	title: string;
+	body: string;
+	link: Cta;
+};
+
 type HomepageContent = {
 	hero: HeroSection;
+	pillars: {
+		eyebrow: string;
+		headline: string;
+		items: Pillar[];
+	};
 };
 
 export const HOMEPAGE: HomepageContent = {
+	pillars: {
+		eyebrow: "One platform",
+		headline: "Design. Build. Publish.",
+		items: [
+			{
+				icon: "Palette",
+				title: "Design",
+				body: "Create any website with flexible design tools and the power of blocks. Start with a blank canvas or choose a theme.",
+				link: { label: "Explore themes →", href: "/themes/" },
+			},
+			{
+				icon: "Cube",
+				title: "Build",
+				body: "See how your site looks in real time as you add, edit, and rearrange content — with intuitive editing and integrated features.",
+				link: { label: "Try the Block Editor →", href: "/playground/" },
+			},
+			{
+				icon: "Broadcast",
+				title: "Publish",
+				body: "Make your site do whatever you need it to. A newsletter, a store, an analytics dashboard — you're in control.",
+				link: { label: "Browse plugins →", href: "/plugins/" },
+			},
+		],
+	},
 	hero: {
 		eyebrow: "WordPress 6.9 — Available now",
 		headlineBefore: "Design, build, publish.",

@@ -36,3 +36,4 @@ Verified slugs (all return 200):
 | ---------------------- | -------------------------------------------------- | ------------------------------ |
 | `Footer`               | https://tailark.com/dusk/footer (footer-2)         | 4-column sitemap grid (md:grid-cols-5 with logo in col-span-2), bottom copyright bar — closest match to spec. Surface retheemed to dark-slab; social icons removed; language hint added. |
 | `HomepageHero`         | https://tailark.com/dusk/hero-section (hero-section-7) | Centered headline + subtext + dual CTAs + panel slot — cleanest centered structure without external deps (Swiper/InfiniteSlider stripped). Nav header excluded (handled by SiteChrome). |
+| `Pillars`              | https://tailark.com/dusk/features/one | Three-pillar Design/Build/Publish story, rethemed to dark slab, Phosphor icons (Palette/Cube/Broadcast). |

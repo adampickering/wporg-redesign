@@ -156,6 +156,27 @@ type FeaturedPlugin = {
 	badge: string | null;
 };
 
+type Category = {
+	slug: string;
+	label: string;
+	count: string;
+};
+
+type PluginGridItem = {
+	name: string;
+	author: string;
+	pitch: string;
+	rating: number;
+	installs: string;
+	testedWith: string;
+};
+
+type InnovatorItem = {
+	quote: string;
+	author: string;
+	plugin: string;
+};
+
 type PluginsContent = {
 	hero: {
 		eyebrow: string;
@@ -169,6 +190,19 @@ type PluginsContent = {
 		eyebrow: string;
 		headline: string;
 		items: FeaturedPlugin[];
+	};
+	categories: Category[];
+	pluginGrid: PluginGridItem[];
+	innovators: {
+		eyebrow: string;
+		headline: string;
+		items: InnovatorItem[];
+	};
+	buildCta: {
+		eyebrow: string;
+		headline: string;
+		body: string;
+		cta: { label: string; href: string };
 	};
 };
 
@@ -210,6 +244,43 @@ export const PLUGINS: PluginsContent = {
 				badge: null,
 			},
 		],
+	},
+	categories: [
+		{ slug: "popular", label: "Popular", count: "1.2K" },
+		{ slug: "blocks", label: "Blocks", count: "840" },
+		{ slug: "seo", label: "SEO", count: "620" },
+		{ slug: "commerce", label: "Commerce", count: "1.5K" },
+		{ slug: "security", label: "Security", count: "340" },
+		{ slug: "performance", label: "Performance", count: "220" },
+		{ slug: "ai", label: "AI", count: "180" },
+		{ slug: "forms", label: "Forms", count: "560" },
+		{ slug: "analytics", label: "Analytics", count: "400" },
+	],
+	pluginGrid: [
+		{ name: "Yoast SEO", author: "Team Yoast", pitch: "The #1 WordPress SEO plugin, trusted by millions.", rating: 4.8, installs: "5M+", testedWith: "7.0" },
+		{ name: "WooCommerce", author: "Automattic", pitch: "Turn your WordPress site into a professional online store.", rating: 4.6, installs: "6M+", testedWith: "7.0" },
+		{ name: "Contact Form 7", author: "Takayuki Miyoshi", pitch: "Simple but flexible contact form plugin.", rating: 4.1, installs: "5M+", testedWith: "7.0" },
+		{ name: "Jetpack", author: "Automattic", pitch: "Security, performance, and marketing tools in one plugin.", rating: 4.3, installs: "5M+", testedWith: "7.0" },
+		{ name: "Elementor", author: "Elementor Team", pitch: "The leading website builder for WordPress.", rating: 4.6, installs: "5M+", testedWith: "7.0" },
+		{ name: "Akismet", author: "Automattic", pitch: "Spam protection powered by millions of sites.", rating: 4.7, installs: "5M+", testedWith: "7.0" },
+		{ name: "WPForms", author: "WPForms", pitch: "Drag-and-drop form builder — no code required.", rating: 4.9, installs: "4M+", testedWith: "7.0" },
+		{ name: "WP Rocket", author: "WP Media", pitch: "The most powerful caching plugin for WordPress.", rating: 4.9, installs: "2M+", testedWith: "7.0" },
+		{ name: "All-in-One SEO", author: "AIOSEO", pitch: "Powerful SEO toolkit for WordPress beginners and pros.", rating: 4.7, installs: "3M+", testedWith: "7.0" },
+	],
+	innovators: {
+		eyebrow: "Innovator spotlight",
+		headline: "Built by people who push the platform forward.",
+		items: [
+			{ quote: "Themes should have character, not just features.", author: "Nick Hamze", plugin: "Twombly" },
+			{ quote: "Block patterns should feel like real design, not templates.", author: "Mike McAlister", plugin: "Ollie" },
+			{ quote: "If a block can be hidden, it should be — cleanly.", author: "Nick Diego", plugin: "Block Visibility" },
+		],
+	},
+	buildCta: {
+		eyebrow: "For developers",
+		headline: "Build a plugin the rest of the web will use.",
+		body: "Plugin APIs, block APIs, REST endpoints, hooks, filters — everything you need to extend WordPress.",
+		cta: { label: "Read the developer handbook \u2192", href: "/develop/docs/developer/" },
 	},
 };
 

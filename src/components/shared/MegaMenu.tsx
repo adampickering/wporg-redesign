@@ -48,11 +48,13 @@ const COLUMNS = [
 export function MegaMenu() {
 	return (
 		<div
-			// Decorative until it's keyboard-operable. No role/aria-label — a
-			// non-operable landmark would pollute the screen-reader rotor. The
-			// follow-up NavigationMenu upgrade will add proper role="menu" +
-			// aria-expanded on the trigger.
-			aria-hidden="true"
+			// No role/aria-label and no aria-hidden: axe's aria-hidden-focus
+			// rule correctly flags aria-hidden on any container that holds
+			// focusable descendants. For Phase 1 we accept that the links are
+			// in the document tab order even when the panel is not visible
+			// (keyboard users discover them after the Develop link). The
+			// NavigationMenu upgrade task will add proper aria-expanded +
+			// `inert`-style visibility toggling.
 			className={[
 				/* Positioning -- centered below trigger, 12px gap */
 				"absolute top-full left-1/2 -translate-x-1/2 mt-3 z-50",

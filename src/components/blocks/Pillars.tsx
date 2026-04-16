@@ -29,7 +29,7 @@ const PillarDecorator = ({ children }: { children: ReactNode }) => (
 			className="absolute inset-0 bg-[linear-gradient(to_right,var(--color-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-border)_1px,transparent_1px)] bg-[size:24px_24px] opacity-60"
 		/>
 		{/* Centered icon box */}
-		<div className="absolute inset-0 m-auto flex size-12 items-center justify-center border-l border-t border-[hsl(233_20%_22%)] bg-dark-surface">
+		<div className="absolute inset-0 m-auto flex size-12 items-center justify-center border-l border-t border-dark-border bg-dark-surface">
 			{children}
 		</div>
 	</div>

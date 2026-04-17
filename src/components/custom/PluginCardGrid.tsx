@@ -38,7 +38,7 @@ export function PluginCardGrid() {
 								aria-hidden="true"
 							/>
 							<div className="flex flex-col gap-0.5 min-w-0">
-								<h3 className="font-display text-[15px] font-semibold leading-snug tracking-[-0.015em] text-balance">
+								<h3 className="font-display text-[15px] font-bold leading-snug tracking-[-0.02em] text-balance">
 									{plugin.name}
 								</h3>
 								<p className="font-body text-[12px] text-muted-foreground font-light leading-snug truncate">

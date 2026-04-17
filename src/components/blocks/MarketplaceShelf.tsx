@@ -63,7 +63,7 @@ export function MarketplaceShelf() {
 
 								{/* Plugin name + author */}
 								<div className="flex flex-col gap-1">
-									<h3 className="font-display font-semibold text-white text-balance leading-[1.1] tracking-[-0.02em] text-[1.125rem]">
+									<h3 className="font-display font-bold text-white text-balance leading-[1.05] tracking-[-0.025em] text-[1.125rem]">
 										{plugin.name}
 									</h3>
 									<p className="text-white/60 text-[13px] font-light">

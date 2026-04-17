@@ -39,8 +39,19 @@ export function Pillars() {
 	const { pillars } = HOMEPAGE;
 
 	return (
-		<section className="bg-dark-slab">
-			<div className="py-[clamp(96px,10vw,160px)]">
+		<section className="bg-dark-slab relative overflow-hidden">
+			{/* Atmospheric gradient */}
+			<div
+				className="absolute inset-0 pointer-events-none"
+				style={{
+					background: [
+						"radial-gradient(ellipse 70% 50% at 50% 0%, hsl(247 100% 70% / 0.07), transparent)",
+						"radial-gradient(ellipse 50% 60% at 0% 70%, hsl(196 100% 64% / 0.05), transparent)",
+						"radial-gradient(ellipse 50% 60% at 100% 70%, hsl(176 64% 57% / 0.04), transparent)",
+					].join(", "),
+				}}
+			/>
+			<div className="relative py-[clamp(96px,10vw,160px)]">
 				<div className="mx-auto max-w-[1280px] px-[clamp(24px,4vw,48px)]">
 					{/* Section heading */}
 					<div className="text-center">
@@ -67,12 +78,12 @@ export function Pillars() {
 									</PillarDecorator>
 
 									{/* Title */}
-									<h3 className="mt-6 font-display font-medium text-white text-balance">
+									<h3 className="mt-6 font-display font-bold text-white text-balance tracking-[-0.025em]">
 										{pillar.title}
 									</h3>
 
 									{/* Body */}
-									<p className="mt-3 text-sm font-light text-white/70 leading-[1.5] text-pretty">
+									<p className="mt-3 text-[15px] font-light text-white/60 leading-[1.55] text-pretty">
 										{pillar.body}
 									</p>
 

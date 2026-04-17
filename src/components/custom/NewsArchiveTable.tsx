@@ -33,7 +33,7 @@ export function NewsArchiveTable() {
 			{/* Header row: title + category filter pills */}
 			<div className="flex flex-wrap items-baseline justify-between gap-4 border-b border-[color:var(--color-foreground-news)]/[0.12] pb-5 mb-0">
 				<h2
-					className="font-display text-[28px] font-semibold tracking-[-0.028em] leading-none text-[color:var(--color-foreground-news)]"
+					className="font-display text-[32px] font-bold tracking-[-0.035em] leading-none text-[color:var(--color-foreground-news)]"
 					style={{ fontFeatureSettings: '"ss01" on, "cv11" on' }}
 				>
 					Archive

@@ -40,9 +40,9 @@ export function NewsPreview() {
 							{/* Article title */}
 							<h3
 								className={[
-									"font-display font-medium text-foreground text-balance",
+									"font-display font-bold text-foreground text-balance",
 									"text-[clamp(1.125rem,1.4vw,1.375rem)]",
-									"tracking-[-0.015em] leading-[1.2]",
+									"tracking-[-0.02em] leading-[1.15]",
 									// Subtle color shift on hover
 									"transition-colors duration-[200ms]",
 									"[transition-timing-function:var(--ease-ui)]",

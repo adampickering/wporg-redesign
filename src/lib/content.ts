@@ -105,11 +105,14 @@ type Pillar = {
 
 type ShowcaseLogo = {
 	name: string;
+	logo: string;
 };
 
 type ShowcaseSite = {
 	name: string;
 	featured?: boolean;
+	image: string;
+	href: string;
 };
 
 type StatItem = {
@@ -313,23 +316,23 @@ export const HOMEPAGE: HomepageContent = {
 		eyebrow: "Who builds on WordPress",
 		headline: "Every kind of story, published here.",
 		logos: [
-			{ name: "Rolling Stone" },
-			{ name: "TIME" },
-			{ name: "NASA" },
-			{ name: "Microsoft" },
-			{ name: "Harvard" },
-			{ name: "TechCrunch" },
+			{ name: "Rolling Stone", logo: "/wporg-redesign/logos/rolling-stone.png" },
+			{ name: "TIME", logo: "/wporg-redesign/logos/time.png" },
+			{ name: "NASA", logo: "/wporg-redesign/logos/NASA-1.png" },
+			{ name: "Microsoft", logo: "/wporg-redesign/logos/Microsoft.png" },
+			{ name: "Harvard", logo: "/wporg-redesign/logos/Harvard.png" },
+			{ name: "TechCrunch", logo: "/wporg-redesign/logos/tech-crunch.png" },
 		],
 	},
 	showcaseBento: {
 		eyebrow: "Showcase",
 		headline: "A universe of possibilities, all built on WordPress.",
 		sites: [
-			{ name: "The New Yorker", featured: true },
-			{ name: "BBC America" },
-			{ name: "TechCrunch" },
-			{ name: "Variety" },
-			{ name: "Sony Music" },
+			{ name: "Rolling Stone", featured: true, image: "/wporg-redesign/showcase/rolling-stone.jpg", href: "https://www.rollingstone.com/" },
+			{ name: "NASA", image: "/wporg-redesign/showcase/nasa.jpg", href: "https://www.nasa.gov/" },
+			{ name: "The Atavist Magazine", image: "/wporg-redesign/showcase/atavist.jpg", href: "https://magazine.atavist.com/" },
+			{ name: "Noma", image: "/wporg-redesign/showcase/noma.jpg", href: "https://noma.dk/" },
+			{ name: "The Noguchi Museum", image: "/wporg-redesign/showcase/noguchi.jpg", href: "https://www.noguchi.org/" },
 		],
 		cta: { label: "Explore the Showcase →", href: "/showcase/" },
 	},
@@ -354,12 +357,12 @@ export const HOMEPAGE: HomepageContent = {
 	},
 	hero: {
 		eyebrow: "WordPress 6.9 — Available now",
-		headlineBefore: "Design, build, publish.",
-		headlineBridge: "Still the",
-		headlineAccent: "open",
-		headlineAfter: " web.",
+		headlineBefore: "Build anything.",
+		headlineBridge: "Own",
+		headlineAccent: "everything",
+		headlineAfter: ".",
 		subtext:
-			"The open-source platform powering 43% of the internet. Free forever, built by a global community, yours to shape.",
+			"The open-source platform behind 43% of the web. Free forever, shaped by a global community, completely yours.",
 		primaryCta: { label: "Get WordPress", href: "/download/" },
 		secondaryCta: { label: "Try in your browser", href: "/playground/" },
 		stats: [

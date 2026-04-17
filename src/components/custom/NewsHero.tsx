@@ -11,8 +11,8 @@ export function NewsHero() {
 			<div className="grid md:grid-cols-[1fr_320px] gap-16 mx-auto max-w-[1280px] px-[clamp(24px,4vw,48px)] pt-24 pb-16 items-start">
 				{/* Headline */}
 				<h1
-					className="m-0 font-display font-semibold leading-[0.92] tracking-[-0.04em] text-[color:var(--color-foreground-news)]"
-					style={{ fontSize: "clamp(3.5rem, 2rem + 6vw, 6.5rem)" }}
+					className="m-0 font-display font-bold leading-[0.9] tracking-[-0.045em] text-[color:var(--color-foreground-news)]"
+					style={{ fontSize: "clamp(3.75rem, 2rem + 6.5vw, 7rem)" }}
 				>
 					{hero.headlineBefore}{" "}
 					<em className="serif-accent">{hero.headlineAccent}</em>

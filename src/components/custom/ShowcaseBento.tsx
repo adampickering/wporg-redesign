@@ -15,8 +15,15 @@ export function ShowcaseBento() {
 	const { showcaseBento } = HOMEPAGE;
 
 	return (
-		<section className="py-[clamp(96px,10vw,160px)]">
-			<div className="mx-auto max-w-[1280px] px-[clamp(24px,4vw,48px)]">
+		<section className="py-[clamp(96px,10vw,160px)] relative overflow-hidden">
+			{/* Ambient glow */}
+			<div
+				className="absolute inset-0 pointer-events-none"
+				style={{
+					background: "radial-gradient(ellipse 70% 50% at 60% 30%, hsl(30 50% 95% / 0.5), transparent)",
+				}}
+			/>
+			<div className="relative mx-auto max-w-[1280px] px-[clamp(24px,4vw,48px)]">
 				{/* Section header */}
 				<p className="eyebrow mb-3">{showcaseBento.eyebrow}</p>
 				<h2 className="font-display max-w-xl mb-10 text-foreground">
@@ -32,11 +39,20 @@ export function ShowcaseBento() {
 				*/}
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-4 [grid-auto-rows:220px]">
 					{showcaseBento.sites.map((site, i) => (
-						<Card
+						<a
 							key={site.name}
+							href={site.href}
+							target="_blank"
+							rel="noopener noreferrer"
+							className={[
+								"block no-underline group",
+								i === 0 ? "md:col-span-2 md:row-span-2" : "",
+							].filter(Boolean).join(" ")}
+						>
+						<Card
 							className={[
 								// Reset shadcn Card defaults that conflict with our system
-								"py-0 gap-0",
+								"py-0 gap-0 h-full",
 								// Surface: cream token, not white
 								"bg-[color:var(--color-surface-cream)]",
 								// Border: hairline via shadow ring, not a hard border
@@ -51,28 +67,32 @@ export function ShowcaseBento() {
 								"hover:shadow-card-hover",
 								// Transition: exact properties only, UI easing, 200ms
 								"transition-shadow duration-[200ms] [transition-timing-function:var(--ease-ui)]",
-								// Featured card spans 2 cols × 2 rows on md+
-								i === 0 ? "md:col-span-2 md:row-span-2" : "",
 							]
 								.filter(Boolean)
 								.join(" ")}
 						>
-							{/* Decorative radial gradient — atmospheric, not dominant */}
-							<div
-								aria-hidden="true"
-								className="absolute inset-0 pointer-events-none"
-								style={{ background: CARD_GRADIENTS[i] ?? "none" }}
+							{/* Site screenshot */}
+							<img
+								src={site.image}
+								alt={`${site.name} website screenshot`}
+								className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 [transition-timing-function:cubic-bezier(0.4,0,0.2,1)] group-hover:scale-105"
 							/>
 
-							{/* Card label — bottom-left, outside gradient layer */}
+							{/* Bottom gradient scrim for text legibility */}
+							<div
+								aria-hidden="true"
+								className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"
+							/>
+
+							{/* Card label — bottom-left, over scrim */}
 							<div className="absolute bottom-5 left-5 z-10">
 								{site.featured && (
-									<span className="eyebrow block mb-1.5 text-muted-foreground">
+									<span className="eyebrow block mb-1.5 text-white/70">
 										Featured
 									</span>
 								)}
 								<h3
-									className="font-display text-foreground leading-tight"
+									className="font-display text-white leading-tight drop-shadow-sm"
 									style={{
 										fontSize: site.featured ? "1.5rem" : "1rem",
 										letterSpacing: site.featured ? "-0.028em" : "-0.015em",
@@ -82,6 +102,7 @@ export function ShowcaseBento() {
 								</h3>
 							</div>
 						</Card>
+						</a>
 					))}
 				</div>
 

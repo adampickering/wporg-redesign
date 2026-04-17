@@ -43,8 +43,7 @@ export function InnovatorSpotlight() {
 								{/* Quote — font-serif for editorial warmth, not italic per spec */}
 								<blockquote className="grow">
 									<p
-										className="font-serif text-[18px] leading-[1.45] text-pretty text-foreground"
-										style={{ fontStyle: "normal" }}
+										className="font-serif text-[19px] leading-[1.4] text-pretty text-foreground italic"
 									>
 										&ldquo;{item.quote}&rdquo;
 									</p>
@@ -53,7 +52,7 @@ export function InnovatorSpotlight() {
 								{/* Author attribution — hairline separator, name + plugin */}
 								<footer className="pt-4 border-t border-border">
 									<cite className="not-italic flex flex-col gap-0.5">
-										<span className="font-display text-[14px] font-medium leading-snug">
+										<span className="font-display text-[14px] font-bold leading-snug">
 											{item.author}
 										</span>
 										<span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">

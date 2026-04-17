@@ -52,8 +52,8 @@ export function NewsFeatured() {
 							{/* Display title */}
 							<h2
 								className={[
-									"font-display font-semibold leading-[1.05] tracking-[-0.028em]",
-									"text-[clamp(1.625rem,1rem+2vw,2.25rem)]",
+									"font-display font-bold leading-[1.02] tracking-[-0.035em]",
+									"text-[clamp(1.75rem,1rem+2.5vw,2.75rem)]",
 									"text-[color:var(--color-foreground-news)] text-balance",
 									"mb-4",
 									"[font-feature-settings:'ss01'_on,'cv11'_on]",

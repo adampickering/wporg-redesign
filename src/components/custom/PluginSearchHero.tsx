@@ -11,15 +11,25 @@ export function PluginSearchHero() {
 
 	return (
 		<section
-			className="py-[clamp(96px,10vw,160px)] text-center"
+			className="py-[clamp(96px,10vw,160px)] text-center relative overflow-hidden"
 			aria-label="Plugin search hero"
 		>
-			<div className="mx-auto max-w-[1280px] px-[clamp(24px,4vw,48px)]">
+			{/* Ambient gradient wash */}
+			<div
+				className="absolute inset-0 pointer-events-none"
+				style={{
+					background: [
+						"radial-gradient(ellipse 70% 60% at 30% 40%, hsl(247 100% 70% / 0.04), transparent)",
+						"radial-gradient(ellipse 60% 50% at 70% 60%, hsl(196 100% 64% / 0.04), transparent)",
+					].join(", "),
+				}}
+			/>
+			<div className="relative mx-auto max-w-[1280px] px-[clamp(24px,4vw,48px)]">
 				{/* Eyebrow — tabular so the "60,000+" digits align cleanly */}
 				<p className="eyebrow tabular mb-5">{hero.eyebrow}</p>
 
 				{/* Headline with serif italic accent on "open" */}
-				<h1 className="font-display mx-auto max-w-[18ch]">
+				<h1 className="font-display font-bold mx-auto max-w-[18ch] tracking-[-0.04em]">
 					{hero.headlineBefore}{" "}
 					<em className="serif-accent">{hero.headlineAccent}</em>
 					{hero.headlineAfter}

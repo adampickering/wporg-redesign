@@ -1,5 +1,5 @@
 :HL["/wporg-redesign/_next/static/chunks/0vq6_dwesbuyy.css","style"]
-:HL["/wporg-redesign/_next/static/chunks/01a47hu6c~th5.css","style"]
+:HL["/wporg-redesign/_next/static/chunks/0wx31uxe~j4ai.css","style"]
 :HC["/",""]
 :HL["/wporg-redesign/logos/rolling-stone.png","image"]
 :HL["/wporg-redesign/logos/time.png","image"]
@@ -19,4 +19,4 @@
 :HL["/wporg-redesign/showcase/nadal.png","image"]
 :HL["/wporg-redesign/showcase/te-tuhi.png","image"]
 :HL["/wporg-redesign/showcase/ray-charles.png","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"0w7nWp8bYBeNQqTvdFmAx"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"NEHPNpggRb1kbULJZXd6p"}

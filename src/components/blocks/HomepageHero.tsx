@@ -97,7 +97,7 @@ export function HomepageHero() {
 						}}
 					/>
 				<motion.div
-					className="relative rounded-t-[20px] overflow-hidden"
+					className="relative rounded-[20px] overflow-hidden"
 					style={{
 						boxShadow: [
 							"0 0 0 0.5px rgba(0, 0, 0, 0.08)",

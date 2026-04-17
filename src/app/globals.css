@@ -382,27 +382,23 @@
 		border-color: transparent;
 	}
 
-	/* Dot grid pattern — Quiver.ai-style SVG dots rendered via CSS.
-	   Uses SVG data URI for pixel-perfect circles at any zoom level. */
+	/* Dot grid pattern — Quiver.ai-style SVG dots.
+	   Applied via GridSection wrapper which constrains to 1280px. */
 	.dot-grid {
-		position: absolute;
-		inset: 0;
 		pointer-events: none;
 		background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23D4D4D4'/%3E%3C/svg%3E");
 		background-size: 12px 12px;
-		mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black, transparent);
-		-webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black, transparent);
+		mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+		-webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
 	}
 
 	/* Dark variant */
 	.dot-grid-dark {
-		position: absolute;
-		inset: 0;
 		pointer-events: none;
 		background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23ffffff' fill-opacity='0.12'/%3E%3C/svg%3E");
 		background-size: 12px 12px;
-		mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent);
-		-webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent);
+		mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+		-webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
 	}
 
 	/* Column divider — reusable 1px vertical line inside grids */

@@ -62,19 +62,8 @@ const SHOWCASE_SITES = [
 
 export function ShowcaseBento() {
 	return (
-		<section className="py-[clamp(96px,10vw,160px)] relative overflow-hidden">
-			{/* Ambient glow */}
-			<div
-				className="absolute inset-0 pointer-events-none"
-				style={{
-					background: [
-						"radial-gradient(ellipse 60% 40% at 20% 20%, hsl(247 100% 70% / 0.04), transparent)",
-						"radial-gradient(ellipse 50% 50% at 80% 80%, hsl(196 100% 64% / 0.03), transparent)",
-					].join(", "),
-				}}
-			/>
-
-			<div className="relative mx-auto max-w-[1280px] px-[clamp(24px,4vw,48px)]">
+		<section className="py-[clamp(96px,10vw,160px)] relative">
+			<div className="mx-auto max-w-[1280px] px-[clamp(24px,4vw,48px)]">
 				{/* Bold CTA header */}
 				<div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
 					<div>

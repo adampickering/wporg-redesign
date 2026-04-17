@@ -17,7 +17,11 @@ type GridSectionProps = {
 export function GridSection({ children, className, dark, dots }: GridSectionProps) {
 	return (
 		<div className={`grid-section ${dark ? "grid-section-dark" : ""} ${className ?? ""}`}>
-			{dots && <div aria-hidden="true" className={dark ? "dot-grid-dark" : "dot-grid"} />}
+			{dots && (
+				<div aria-hidden="true" className="absolute inset-0 pointer-events-none overflow-hidden flex justify-center">
+					<div className={`w-full max-w-[1280px] h-full ${dark ? "dot-grid-dark" : "dot-grid"}`} />
+				</div>
+			)}
 			{children}
 		</div>
 	);

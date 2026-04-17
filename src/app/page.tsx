@@ -14,7 +14,7 @@ export default function Home() {
 			<GridSection>
 				<StaggerReveal delay={0}><HomepageHero /></StaggerReveal>
 			</GridSection>
-			<GridSection dots>
+			<GridSection>
 				<StaggerReveal delay={0.1}><LogoCloud /></StaggerReveal>
 			</GridSection>
 			<GridSection dots>

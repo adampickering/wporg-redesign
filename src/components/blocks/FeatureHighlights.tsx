@@ -239,7 +239,6 @@ const C = "bg-[#EBE8E5] rounded-[16px] overflow-hidden";
 export function FeatureHighlights() {
 	return (
 		<section className="py-[clamp(80px,8vw,128px)] relative overflow-hidden">
-			<div className="absolute inset-0 pointer-events-none dot-grid" aria-hidden="true" />
 			<div className="relative mx-auto max-w-[1280px] px-[clamp(24px,4vw,48px)]">
 				<div className="mb-12">
 					<p className="eyebrow mb-4">What&apos;s new in WordPress</p>

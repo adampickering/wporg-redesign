@@ -18,10 +18,16 @@ const PRIMARY_LINKS: { label: string; slug: NavActiveSlug; href: string; caret?:
 
 export function Nav({ active }: NavProps) {
 	return (
-		<header role="banner" className="w-full bg-transparent">
+		<header role="banner" className="w-full relative">
+			{/* Rail lines extending through the nav */}
+			<div
+				aria-hidden="true"
+				className="pointer-events-none absolute inset-0 mx-auto max-w-[1280px] border-x border-b z-[1]"
+				style={{ borderColor: "#E5E5E5" }}
+			/>
 			<nav
 				aria-label="Primary"
-				className="max-w-[1280px] mx-auto px-8 py-[22px] grid grid-cols-[auto_1fr_auto] items-center gap-8"
+				className="relative max-w-[1280px] mx-auto px-8 py-[22px] grid grid-cols-[auto_1fr_auto] items-center gap-8"
 			>
 				{/* Left: Brand — full WordPress wordmark, dark on light bg */}
 				<a

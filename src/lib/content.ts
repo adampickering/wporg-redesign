@@ -157,6 +157,7 @@ type FeaturedPlugin = {
 	installs: string;
 	rating: number;
 	badge: string | null;
+	icon?: string;
 };
 
 type Category = {
@@ -172,6 +173,7 @@ type PluginGridItem = {
 	rating: number;
 	installs: string;
 	testedWith: string;
+	icon?: string;
 };
 
 type InnovatorItem = {
@@ -260,15 +262,14 @@ export const PLUGINS: PluginsContent = {
 		{ slug: "analytics", label: "Analytics", count: "400" },
 	],
 	pluginGrid: [
-		{ name: "Yoast SEO", author: "Team Yoast", pitch: "The #1 WordPress SEO plugin, trusted by millions.", rating: 4.8, installs: "5M+", testedWith: "7.0" },
-		{ name: "WooCommerce", author: "Automattic", pitch: "Turn your WordPress site into a professional online store.", rating: 4.6, installs: "6M+", testedWith: "7.0" },
-		{ name: "Contact Form 7", author: "Takayuki Miyoshi", pitch: "Simple but flexible contact form plugin.", rating: 4.1, installs: "5M+", testedWith: "7.0" },
-		{ name: "Jetpack", author: "Automattic", pitch: "Security, performance, and marketing tools in one plugin.", rating: 4.3, installs: "5M+", testedWith: "7.0" },
-		{ name: "Elementor", author: "Elementor Team", pitch: "The leading website builder for WordPress.", rating: 4.6, installs: "5M+", testedWith: "7.0" },
-		{ name: "Akismet", author: "Automattic", pitch: "Spam protection powered by millions of sites.", rating: 4.7, installs: "5M+", testedWith: "7.0" },
-		{ name: "WPForms", author: "WPForms", pitch: "Drag-and-drop form builder — no code required.", rating: 4.9, installs: "4M+", testedWith: "7.0" },
-		{ name: "WP Rocket", author: "WP Media", pitch: "The most powerful caching plugin for WordPress.", rating: 4.9, installs: "2M+", testedWith: "7.0" },
-		{ name: "All-in-One SEO", author: "AIOSEO", pitch: "Powerful SEO toolkit for WordPress beginners and pros.", rating: 4.7, installs: "3M+", testedWith: "7.0" },
+		{ name: "Yoast SEO", author: "Team Yoast", pitch: "The #1 WordPress SEO plugin, trusted by millions.", rating: 4.8, installs: "5M+", testedWith: "7.0", icon: "/wporg-redesign/plugins/wordpress-seo.gif" },
+		{ name: "WooCommerce", author: "Automattic", pitch: "Turn your WordPress site into a professional online store.", rating: 4.6, installs: "6M+", testedWith: "7.0", icon: "/wporg-redesign/plugins/woocommerce.svg" },
+		{ name: "Contact Form 7", author: "Takayuki Miyoshi", pitch: "Simple but flexible contact form plugin.", rating: 4.1, installs: "5M+", testedWith: "7.0", icon: "/wporg-redesign/plugins/contact-form-7.svg" },
+		{ name: "Jetpack", author: "Automattic", pitch: "Security, performance, and marketing tools in one plugin.", rating: 4.3, installs: "5M+", testedWith: "7.0", icon: "/wporg-redesign/plugins/jetpack.svg" },
+		{ name: "Elementor", author: "Elementor Team", pitch: "The leading website builder for WordPress.", rating: 4.6, installs: "5M+", testedWith: "7.0", icon: "/wporg-redesign/plugins/elementor.gif" },
+		{ name: "Akismet", author: "Automattic", pitch: "Spam protection powered by millions of sites.", rating: 4.7, installs: "5M+", testedWith: "7.0", icon: "/wporg-redesign/plugins/akismet.png" },
+		{ name: "WPForms", author: "WPForms", pitch: "Drag-and-drop form builder — no code required.", rating: 4.9, installs: "4M+", testedWith: "7.0", icon: "/wporg-redesign/plugins/wpforms-lite.svg" },
+		{ name: "All-in-One SEO", author: "AIOSEO", pitch: "Powerful SEO toolkit for WordPress beginners and pros.", rating: 4.7, installs: "3M+", testedWith: "7.0", icon: "/wporg-redesign/plugins/all-in-one-seo-pack.svg" },
 	],
 	innovators: {
 		eyebrow: "Innovator spotlight",

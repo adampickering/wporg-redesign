@@ -18,7 +18,7 @@ const PRIMARY_LINKS: { label: string; slug: NavActiveSlug; href: string; caret?:
 
 export function Nav({ active }: NavProps) {
 	return (
-		<header role="banner" className="w-full">
+		<header role="banner" className="w-full bg-transparent">
 			<nav
 				aria-label="Primary"
 				className="max-w-[1280px] mx-auto px-8 py-[22px] grid grid-cols-[auto_1fr_auto] items-center gap-8"

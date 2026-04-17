@@ -1,5 +1,6 @@
 import { SiteChrome } from "@/components/shared/SiteChrome";
 import { StaggerReveal } from "@/components/shared/StaggerReveal";
+import { GridSection } from "@/components/shared/GridSection";
 import { HomepageHero } from "@/components/blocks/HomepageHero";
 import { LogoCloud } from "@/components/blocks/LogoCloud";
 import { FeatureHighlights } from "@/components/blocks/FeatureHighlights";
@@ -10,12 +11,24 @@ import { NewsPreview } from "@/components/blocks/NewsPreview";
 export default function Home() {
 	return (
 		<SiteChrome active="showcase">
-			<StaggerReveal delay={0}><HomepageHero /></StaggerReveal>
-			<StaggerReveal delay={0.1}><LogoCloud /></StaggerReveal>
-			<StaggerReveal delay={0.15}><FeatureHighlights /></StaggerReveal>
-			<StaggerReveal delay={0.2}><ShowcaseBento /></StaggerReveal>
-			<StaggerReveal delay={0.3}><Stats /></StaggerReveal>
-			<StaggerReveal delay={0.4}><NewsPreview /></StaggerReveal>
+			<GridSection>
+				<StaggerReveal delay={0}><HomepageHero /></StaggerReveal>
+			</GridSection>
+			<GridSection dots>
+				<StaggerReveal delay={0.1}><LogoCloud /></StaggerReveal>
+			</GridSection>
+			<GridSection dots>
+				<StaggerReveal delay={0.15}><FeatureHighlights /></StaggerReveal>
+			</GridSection>
+			<GridSection>
+				<StaggerReveal delay={0.2}><ShowcaseBento /></StaggerReveal>
+			</GridSection>
+			<GridSection dark dots>
+				<StaggerReveal delay={0.3}><Stats /></StaggerReveal>
+			</GridSection>
+			<GridSection dots>
+				<StaggerReveal delay={0.4}><NewsPreview /></StaggerReveal>
+			</GridSection>
 		</SiteChrome>
 	);
 }

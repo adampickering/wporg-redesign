@@ -57,7 +57,17 @@ function WordPressWordmark() {
 
 export function Footer() {
 	return (
-		<footer className="bg-dark-slab">
+		<footer className="bg-dark-slab relative">
+			{/* Rail lines extending into footer */}
+			<div
+				aria-hidden="true"
+				className="pointer-events-none absolute inset-0 mx-auto max-w-[1280px] border-x z-[1]"
+				style={{
+					borderColor: "hsl(0 0% 100% / 0.1)",
+					maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
+					WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
+				}}
+			/>
 			{/* Sitemap — 4 columns, full width, no logo (wordmark below handles brand) */}
 			<nav aria-label="Footer" className="mx-auto max-w-[1280px] px-8 pt-[80px] pb-16">
 				<div className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-4">
@@ -83,9 +93,9 @@ export function Footer() {
 				</div>
 			</nav>
 
-			{/* Massive wordmark — the brand statement */}
+			{/* Massive wordmark — inset from rail lines */}
 			<div className="px-8">
-				<div className="mx-auto max-w-[1440px] text-white/[0.08]">
+				<div className="mx-auto max-w-[1080px] text-white/[0.08]">
 					<WordPressWordmark />
 				</div>
 			</div>

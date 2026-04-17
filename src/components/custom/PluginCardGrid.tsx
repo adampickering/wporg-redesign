@@ -30,13 +30,20 @@ export function PluginCardGrid() {
 							"focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2",
 						].join(" ")}
 					>
-						{/* Icon placeholder + plugin identity */}
+						{/* Plugin icon + identity */}
 						<div className="flex items-start gap-3">
-							{/* Icon placeholder: 48×48 warm surface square */}
-							<div
-								className="shrink-0 w-12 h-12 rounded-lg bg-surface-cream border border-border"
-								aria-hidden="true"
-							/>
+							{plugin.icon ? (
+								<img
+									src={plugin.icon}
+									alt=""
+									className="shrink-0 w-12 h-12 rounded-lg object-cover"
+								/>
+							) : (
+								<div
+									className="shrink-0 w-12 h-12 rounded-lg bg-surface-cream border border-border"
+									aria-hidden="true"
+								/>
+							)}
 							<div className="flex flex-col gap-0.5 min-w-0">
 								<h3 className="font-display text-[15px] font-bold leading-snug tracking-[-0.02em] text-balance">
 									{plugin.name}
